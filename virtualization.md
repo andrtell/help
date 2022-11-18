@@ -179,6 +179,11 @@ $ ip -o link | grep virbr3
     virbr3 ...
 ```
 
+## Stop a network
+```
+$ virsh net-destroy orange
+```
+
 ## Show interfaces attached to domain
 ```
 $ virsh domiflist ubuntu01
@@ -236,3 +241,10 @@ $ virsh net-define banana.xml
 
 $ virsh net-start banana
 ```
+### Edit network 
+```
+$ virsh net-destroy banana # first stop it
+
+$ virsh net-edit banana
+```
+
