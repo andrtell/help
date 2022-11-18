@@ -64,8 +64,7 @@ $ virsh domcapabilites | grep diskDevice -A 7
 
 ### Number of vCPUs
 
-If running task with a high cpu workload use 1 vCPU per 1 pCPU. In any case, the KVM hypervisor 
-supports overcommitting virtualized CPUs (vCPUs). 
+If running task with a high cpu workload use 1 vCPU per 1 pCPU. In any case, the KVM hypervisor supports overcommitting virtualized CPUs (vCPUs). 
 
 To check the max number of vCPUs that can be assign to a VM
 ```
@@ -74,4 +73,17 @@ $ virsh maxvcpus
 # or
 
 $ virsh domcapabilities | grep max
+```
+
+## Create a VM
+```
+$ virt-install \
+  --name ubuntu01 \
+  --memory 2048 \
+  --vcpus 2 \
+  --console pty,target.type=serial \
+  --network network=default \
+  --osinfo detect=on \
+  --disk path=/some/path/ubuntu01.qcow2,size=8 \
+  --cdrom /some/path/ubuntu-22.04.01-live-server-amd64.iso
 ```
