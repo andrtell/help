@@ -1,5 +1,11 @@
 # Virtualization
 
+## Vocab
+
+domain => vm, guest
+
+node => host, machine hosting virtual VM
+
 ## Requirements & Setup
 
 ### Check if CPU supports virtualization (Intel, AMD)
