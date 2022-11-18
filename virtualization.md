@@ -217,3 +217,37 @@ $ virsh domiflist ubuntu01
     
 $ virsh detach-interface ubunut01 network --mac 52:54:00:f1:9a:06 --config --live
 ```
+
+### Create a routed network
+
+A routed network uses the routing table on the hypervisor. 
+
+You will have to set up SNAT and/or DNAT on the hypervisor your self.
+```
+$ cat banana.xml
+
+    <network>
+      <name>banana</name>
+      <forward dev='wlp0s20f3' mode='route'>
+        <interface dev='wlp0s20f3'/>
+      </forward>
+      <ip address='192.168.77.1' netmask='255.255.255.0'>
+      </ip>
+    </network>
+
+$ virsh net-dumpxml banana
+
+    <network>
+      <name>banana</name>
+      <uuid>fd9b850c-94d3-4ff2-956e-f43a28f3bb52</uuid>
+      <forward dev='wlp0s20f3' mode='route'>
+        <interface dev='wlp0s20f3'/>
+      </forward>
+      <bridge name='virbr1' stp='on' delay='0'/>
+      <mac address='52:54:00:bb:92:d2'/>
+      <ip address='192.168.77.1' netmask='255.255.255.0'>
+      </ip>
+    </network>
+    
+$ virsh net-start banana
+```
