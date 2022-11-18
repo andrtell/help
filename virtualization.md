@@ -90,18 +90,19 @@ $ virt-install \
 ```
 $ virsh list --all
 ```
+## Start & Stop VM
 
-## Start a VM
+### Start a VM
 ```
 $ virsh start ubuntu01
 ```
 
-## Stop a VM gracefully (may never happen)
+### Stop a VM gracefully (may never happen)
 ```
 $ virsh shutdown ubuntu01
 ```
 
-## Stop a VM un-gracefully
+### Stop a VM un-gracefully
 ```
 $ virsh destroy ubuntu01
 ```
@@ -109,6 +110,9 @@ $ virsh destroy ubuntu01
 ```
 $ virsh undefine ubuntu01 --remove-all-storage
 ```
-
+## Show VM network ip
+```
+$ virsh domifaddr ubuntu01
+```
 
 
