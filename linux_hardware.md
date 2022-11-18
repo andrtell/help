@@ -37,11 +37,6 @@ $ lsblk
 $ ip link
 ```
 
-### List ports being listen on
-```
-$ sudo ss -tunlp
-```
-
 ### Show disk usage
 ```
 $ df -h
@@ -51,18 +46,4 @@ $ df -h
 
 ```
 $ free -h
-```
-
-### List every process on the system
-```
-$ ps -ef
-```
-
-### List processes with command
-```
-$ ps -f $(pidof firefox)
-
-# or
-
-$ pgrep firefox
 ```
