@@ -62,7 +62,7 @@ $ ps -ef
 ```
 $ ps -f $(pidof firefox)
 
-# ir
+# or
 
 $ pgrep firefox
 ```
