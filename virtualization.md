@@ -179,7 +179,7 @@ $ ip -o link | grep virbr3
     virbr3 ...
 ```
 
-## Show networks attached to domain
+## Show interfaces attached to domain
 ```
 $ virsh domiflist ubuntu01
  
@@ -194,5 +194,14 @@ $ ssh user@ubuntu01
         enp1s0 ...
         link/ether 52:54:00:2d:5f:84
 ```
-    
-    
+
+### Attach an interface to a domain
+```
+$ virsh attach-interface \
+  --domain ubuntu01 \
+  --source orange \
+  --type network \
+  --model virtio \
+  --config \    # persist change, survives VM restart
+  --live        # attach interface to currently running VM
+```
