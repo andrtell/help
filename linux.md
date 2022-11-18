@@ -1,6 +1,6 @@
-# OS
+# Linux
 
-## General information
+## Info
 
 ### List OS info
 ```
@@ -56,11 +56,6 @@ $ free -h
 ### List every process on the system
 ```
 $ ps -ef
-```
-
-### List every process with custom info shown
-```
-$ ps -eo user,pid,%mem,cmd
 ```
 
 ### List processes with command
