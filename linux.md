@@ -60,5 +60,9 @@ $ ps -ef
 
 ### List processes with command
 ```
-# ps -f $(pidof firefox)
+$ ps -f $(pidof firefox)
+
+# ir
+
+$ pgrep firefox
 ```
