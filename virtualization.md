@@ -178,3 +178,21 @@ $ ip -o link | grep virbr3
 
     virbr3 ...
 ```
+
+## Show networks attached to domain
+```
+$ virsh domiflist ubuntu01
+ 
+    Interface   Type      Source    Model    MAC
+    ----------------------------------------------------------
+    vnet15      network   default   virtio   52:54:00:2d:5f:84
+ 
+$ ssh user@ubuntu01
+
+    user@ubuntu01:~$ ip a
+
+        enp1s0 ...
+        link/ether 52:54:00:2d:5f:84
+```
+    
+    
