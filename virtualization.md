@@ -81,7 +81,6 @@ $ virt-install \
   --name ubuntu01 \
   --memory 2048 \
   --vcpus 2 \
-  --console pty,target.type=serial \
   --network network=default \
   --osinfo detect=on \
   --disk path=/some/path/ubuntu01.qcow2,size=8 \
