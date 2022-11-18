@@ -21,7 +21,7 @@ $ ssh user@ubuntu01
         link/ether 52:54:00:2d:5f:84
 ```
 
-### Attach an interface to a VM
+## Attach an interface to a VM
 ```
 $ virsh attach-interface ubuntu01 network orange \
   --model virtio \
@@ -29,7 +29,7 @@ $ virsh attach-interface ubuntu01 network orange \
   --live        # attach interface to currently running VM
 ```
 
-### Detach an interface from a domain
+## Detach an interface from a domain
 ```
 $ virsh domiflist ubuntu01
 
