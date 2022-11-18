@@ -225,6 +225,10 @@ $ virsh detach-interface ubunut01 network --mac 52:54:00:f1:9a:06 --config --liv
 A routed network uses the routing table on the hypervisor. 
 
 You will have to set up SNAT and/or DNAT on the hypervisor your self.
+
+One advantage is that if the hypervisor is set up as a gateway for some other network, hosts
+on those networks will be able to communicate with the VMs.
+
 ```
 $ cat banana.xml
 
