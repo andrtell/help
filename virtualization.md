@@ -120,5 +120,61 @@ $ virsh undefine ubuntu01 --remove-all-storage
 ```
 $ virsh domifaddr ubuntu01
 ```
+## Networks
 
+### List (virtual) networks
+```
+$ virsh net-list
+```
+### The default network
 
+The default network is a NAT based virtual network. It also provides a DHCP server.
+
+### Show network info
+```
+$ virsh net-info default
+```
+### Dump network info
+```
+$ virsh net-dumpxml default
+```
+### Network config location
+```
+$ ls /etc/libvirt/qemu/networks/*
+```
+## Create a new network
+```
+$ cat orange.xml
+
+    <network>
+      <name>orange</name>
+    </network>
+
+$ virsh net-define orange.xml
+
+$ virsh net-dumpxml orange
+
+    <network>
+      <name>Orange</name>
+      <uuid>1d567544-3ab7-499f-8621-fd2664c1e078</uuid>  
+      <bridge name='virbr3' stp='on' delay='0'/>
+      <mac address='52:54:00:81:f0:63'/>
+    </network>
+    
+$ cat /etc/libvirt/qemu/networks/orange.xml
+  
+    # -""-
+  
+$ ip -o link | grep virbr3
+
+    # nothing, network is not started
+```
+
+## Start a network
+```
+$ virsh net-start orange
+
+$ ip -o link | grep virbr3
+
+    virbr3 ...
+```
