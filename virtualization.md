@@ -142,7 +142,7 @@ $ virsh net-dumpxml default
 ```
 $ ls /etc/libvirt/qemu/networks/*
 ```
-## Create a new network
+## Create a new (isolated) network
 ```
 $ cat orange.xml
 
@@ -197,10 +197,7 @@ $ ssh user@ubuntu01
 
 ### Attach an interface to a domain
 ```
-$ virsh attach-interface
-  ubuntu01 \
-  network \
-  orange \
+$ virsh attach-interface ubuntu01 network orange \
   --model virtio \
   --config \    # persist change, survives VM restart
   --live        # attach interface to currently running VM
@@ -235,19 +232,7 @@ $ cat banana.xml
       </ip>
     </network>
 
-$ virsh net-dumpxml banana
+$ virsh net-define banana.xml
 
-    <network>
-      <name>banana</name>
-      <uuid>fd9b850c-94d3-4ff2-956e-f43a28f3bb52</uuid>
-      <forward dev='wlp0s20f3' mode='route'>
-        <interface dev='wlp0s20f3'/>
-      </forward>
-      <bridge name='virbr1' stp='on' delay='0'/>
-      <mac address='52:54:00:bb:92:d2'/>
-      <ip address='192.168.77.1' netmask='255.255.255.0'>
-      </ip>
-    </network>
-    
 $ virsh net-start banana
 ```
