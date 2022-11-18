@@ -1,48 +1,36 @@
-# Linux
+# Linux Hardware
 
-## Info
-
-### List OS info
-```
-$ uname -a
-```
-
-### List loaded kernel modules
-```
-$ lsmod
-```
-
-### List CPU info
+## List CPU info
 ```
 $ lscpu
 ```
 
-### List hardware info
+## List hardware info
 ```
 $ sudo lshw -short
 ```
 
-### List memory info
+## List memory info
 ```
 $ lsmem
 ```
 
-### List block devices
+## List block devices
 ```
 $ lsblk
 ```
 
-### List network devices
+## List network devices
 ```
 $ ip link
 ```
 
-### Show disk usage
+## Show disk usage
 ```
 $ df -h
 ```
 
-### Show memory usage
+## Show memory usage
 
 ```
 $ free -h
