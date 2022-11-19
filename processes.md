@@ -38,9 +38,9 @@ List pid started via command
 ```
 $ pidof firefox
 
-$ ps $(pidof firefox)
-
 $ pgrep firefox
+
+$ ps -C firefox
 ```
 
 Kill process
