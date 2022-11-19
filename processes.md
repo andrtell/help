@@ -50,6 +50,11 @@ $ pgrep firefox
 $ ps -C firefox
 ```
 
+List children of PID
+```
+$ ps --ppid PARENT_PID
+```
+
 Kill process
 ```
 $ kill 999
