@@ -60,6 +60,13 @@ In other words setup host as a FORWARD proxy (level 3).
 
 ```
 $ nft add rule ip nat postrouting oif eth0 masquerade
+
+$ nft list ruleset
+
+    chain postrouting {
+      type nat hook postrouting priority filter; policy accept;
+      oif "eth0" masquerade
+    }
 ```
 
 ### Add DNAT forwading using nftables
@@ -70,4 +77,11 @@ In other words setup host as a REVERSE proxy (level 3).
 
 ```
 $  nft add rule ip nat prerouting iif eth0 tcp dport 9999 dnat to 10.0.0.7:9999
+
+$ nft list ruleset
+
+    chain prerouting {
+      type nat hook prerouting priority filter; policy accept;
+      iif "eht0" tcp dport 9999 dnat to 10.0.0.7:9999
+    }
 ```
