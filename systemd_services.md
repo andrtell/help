@@ -1,5 +1,8 @@
 # Systemd services
 
+see: `man systemd.unit`
+see: `man systemd.service`
+
 ## Enable persistent user-services
 
 Services started by non-root user dies after user logs out unless:
