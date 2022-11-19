@@ -25,3 +25,13 @@ $ ip link set tap01 master bridge01
 ```
 $ ip link set tap01 nomaster
 ```
+
+## Remove tap device
+```
+$ ip link del tap01
+```
+
+## Remove bridge
+```
+$ ip link del bridge01
+```
