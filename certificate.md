@@ -17,7 +17,7 @@ $ sudo snap install --classic certbot
 $ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 
 # run it
-$ sudo certbot certonly --standalone
+$ sudo certbot certonly --standalone -d host.com -d '*.host.com'
 ```
 
 The Certbot packages on your system come with a cron job or systemd timer that will renew your certificates automatically 
