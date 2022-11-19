@@ -8,7 +8,7 @@ see: https://eff-certbot.readthedocs.io/en/stable/index.html
 
 Before you start, make sure the host is reachable through its domain (i.e host.com) by setting up your DNS.
 
-Install and run certbot
+Install and run certbot on Ubuntu
 
 ```
 # update snap
