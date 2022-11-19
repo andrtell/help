@@ -32,7 +32,14 @@ $ ps -o pid,ppid,%mem,command
 List process tree
 ```
 $ ps -H
+
+$ ps --forest
 ````
+
+List process tree belonging to command
+```
+$ ps -f --forest -C hyper
+```
 
 List pid started via command
 ```
