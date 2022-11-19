@@ -1,12 +1,13 @@
 # Virtualization VM Network
 
-## Show VM network ip
-```
-$ virsh domifaddr ubuntu01
-```
-
 ## Show VM network interfaces
 ```
+$ virsh domifaddr ubuntu01
+
+    Name       MAC address          Protocol     Address
+    --------------------------------------------------------------
+    vnet17     52:54:00:2d:5f:84    ipv4         192.168.122.78/24
+
 $ virsh domiflist ubuntu01
  
     Interface   Type      Source    Model    MAC
@@ -16,20 +17,22 @@ $ virsh domiflist ubuntu01
 $ ssh user@ubuntu01
 
     user@ubuntu01:~$ ip a
-
-        enp1s0 ...
+        ...
+        enp1s0
         link/ether 52:54:00:2d:5f:84
+        inet 192.168.122.78/24
+        ...
 ```
 
-## Attach an interface to a VM
+## Attach an interface
 ```
 $ virsh attach-interface ubuntu01 network orange \
-  --model virtio \
-  --config \    # persist change, survives VM restart
-  --live        # attach interface to currently running VM
+   --model virtio \
+   --config \    # persist change
+   --live        # running VM
 ```
 
-## Detach an interface from a domain
+## Detach an interface
 ```
 $ virsh domiflist ubuntu01
 
