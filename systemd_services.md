@@ -46,3 +46,22 @@ $ systemctl enable <service>
 ```
 $ systemctl status <service>
 ```
+
+## Creating service (unit) files
+
+root services goes into `/etc/systemd/system/<name>.service`
+
+user services goes into `/.config/systemd/user/<name>.service`
+
+### Format
+
+```
+[Unit]
+Descripttion=My service
+
+[Service]
+ExecStart=/home/user/my-script.sh
+
+[Install]
+WantedBy=multi-user.target
+```
