@@ -2,7 +2,7 @@
 
 see: https://eff-certbot.readthedocs.io/en/stable/index.html
 
-## Create certificate using CertBot
+## Create certificate using certbot --standalone
 
 Before you start, make sure the host is reachable through its domain (i.e host.com) by setting up your DNS.
 
