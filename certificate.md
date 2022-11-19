@@ -1,5 +1,7 @@
 # Certificates
 
+Cert-bot offers many ways to create certficates.
+
 see: https://eff-certbot.readthedocs.io/en/stable/index.html
 
 ## Create certificate using certbot --standalone
