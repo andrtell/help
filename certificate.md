@@ -1,5 +1,7 @@
 # Certificates
 
+see: https://eff-certbot.readthedocs.io/en/stable/index.html
+
 ## Create certificate using CertBot
 
 Before you start, make sure the host is reachable through its domain (i.e host.com) by setting up your DNS.
@@ -37,7 +39,7 @@ Certificate files can be found at:
 If you are behind a load-balancer, you should probably run this on the load-balancer host and not on 
 a host behind the load-balancer.
 
-# Create certificates manually
+## Create certificates via setting DNS records using certbot
 
 This example is using a digital ocean (digital ocean allows you to set DNS entries via api)
 
