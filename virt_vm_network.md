@@ -1,5 +1,13 @@
 # Virtualization VM Network
 
+## Enable dns lookup based of domain names
+
+```
+$ vi /etc/nsswitch.conf
+
+    hosts: files libvirt_guest mdns dns
+```
+
 ## Show VM network interfaces
 ```
 $ virsh domifaddr ubuntu01
