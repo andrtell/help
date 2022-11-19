@@ -54,6 +54,8 @@ _EOF
 This will enable any host on network that has THIS host setup as a gateway (default route) to 
 establish a connection to the outsite world.
 
+In other words setup host as a FORWARD proxy (level 3).
+
 ```
 $ nft add rule ip nat postrouting oif eth0 masquerade
 ```
@@ -61,6 +63,8 @@ $ nft add rule ip nat postrouting oif eth0 masquerade
 ### Add DNAT forwading using nftables
 
 This will forward any traffing comming in on port 9999 on eth0 to 10.0.0.7:9999
+
+In other words setup host as a REVERSE proxy (level 3).
 
 ```
 $  nft add rule ip nat prerouting iif eth0 tcp dport 9999 dnat to 10.0.0.7:9999
