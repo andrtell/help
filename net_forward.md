@@ -33,6 +33,8 @@ $ echo 'net.ipv4.ip_forward = 1' >> /etc/sysctl.conf
 Note that the default policies here are ACCEPT.
 
 ```
+$ nft flush ruleset # remove all rules
+
 $ nft -f <(cat <<_EOF
 table filter {
   chain input { type filter hook input priority 0; policy accept; }
