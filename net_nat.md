@@ -1,4 +1,4 @@
-# Network Forward
+# Network NAT
 
 `man sysctl` `man nft`
 
