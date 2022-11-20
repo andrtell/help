@@ -1,6 +1,6 @@
 # Network address
 
-see: `man ip-address`
+`man ip-address`
 
 ## Show interface address information
 ```
