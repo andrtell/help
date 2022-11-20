@@ -1,6 +1,6 @@
 # Net Route
 
-see: `man ip-route`
+`man ip-route`
 
 ## Show routes
 ```
