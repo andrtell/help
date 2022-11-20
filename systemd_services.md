@@ -1,6 +1,5 @@
 # Systemd services
 
-see: 
 `man systemd.unit`
 `man systemd.service`
 
