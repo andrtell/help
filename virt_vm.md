@@ -1,5 +1,7 @@
 # Virtualization VMs
 
+`man virt-install` `man virsh`
+
 ## Create a VM
 ```
 $ virt-install \
