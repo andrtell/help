@@ -1,5 +1,7 @@
 # Processes
 
+`man ps` `man pgrep` `man kill` `man pkill` `man pidof`
+
 ## List processes
 
 List processes same effective user ID as the current user and associated with the same terminal 
