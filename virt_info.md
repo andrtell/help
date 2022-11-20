@@ -1,5 +1,7 @@
 # Virtualization Info
 
+`man virsh`
+
 ## Check what can be assigned to a VM
 ```
 $ virsh domcapablities
