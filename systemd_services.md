@@ -1,7 +1,8 @@
 # Systemd services
 
-see: `man systemd.unit`
-see: `man systemd.service`
+see: 
+`man systemd.unit`
+`man systemd.service`
 
 ## Enable persistent user-services
 
