@@ -1,5 +1,7 @@
 # Virtualization Setup
 
+`man virt-host-validate`
+
 ## Requirements
 
 ### Check if CPU supports virtualization (Intel, AMD)
