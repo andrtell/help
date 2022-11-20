@@ -1,8 +1,8 @@
 # Network Forward
 
-## Setup
+`man sysctl` `man nft`
 
-### Show if IP forwarding is enabled on host
+## Check if IP forwarding is enabled on host
 
 ```
 $ cat /proc/sys/net/ipv4/ip_forward
@@ -12,7 +12,7 @@ $ cat /proc/sys/net/ipv4/ip_forward
 $ sysctl net.ipv4.ip_forward
 ```
 
-### Enable IPv4 forwarding of IP packets on host
+## Enable IPv4 forwarding of IP packets on host
 
 ```
 $ echo 1 > /proc/sys/net/ipv4/ip_forward
@@ -28,7 +28,7 @@ $ sysctl -w net.ipv4.ip_forward=1
 $ echo 'net.ipv4.ip_forward = 1' >> /etc/sysctl.conf
 ```
 
-### Setup default rules for nftables
+## Set default rules for nftables
 
 Note that the default policies here are ACCEPT.
 
@@ -51,12 +51,12 @@ _EOF
 )
 ```
 
-### Add SNAT forwarding using nftables
+## Add SNAT (Source Network Address Translation) using nftables
 
 This will enable any host on network that has THIS host setup as a gateway (default route) to 
 establish a connection to the outsite world.
 
-In other words setup host as a FORWARD proxy (level 2-3).
+In other words setup host as a FORWARD proxy (ISO level 2-3).
 
 ```
 $ nft add rule ip nat postrouting oif eth0 masquerade
@@ -69,7 +69,7 @@ $ nft list ruleset
     }
 ```
 
-### Add DNAT forwading using nftables
+### Add DNAT (Destination Network Address Translation) using nftables
 
 This will forward any traffing comming in on port 9999 on eth0 to 10.0.0.7:9999
 
