@@ -25,12 +25,12 @@ $ podman run registry.access.redhat.com/ubi8 bash -c "sleep 10"
 $ podman run -it --rm registry.access.redhat.com/ubi8 bash
 ```
 
-### Run container as daemon
+## Run container as daemon
 ```
 $ podman run -d -p 8080:80 --name httpd --rm docker.io/library/httpd:2.4
 ```
 
-### Kill the main process in a container
+## Kill the main process in a container
 ```
 $ podman kill <container>
 ```
