@@ -1,6 +1,5 @@
 # Podman Container
 
-see:
 `man podman`
 `man podman-run`
 `man podman-stop`
