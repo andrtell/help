@@ -1,4 +1,4 @@
-# SSH
+# Github SSH
 
 Create a new ssh key pair:
 
