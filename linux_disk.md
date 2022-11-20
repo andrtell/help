@@ -1,5 +1,7 @@
 # Linux Disk
 
+`man mount` `man lsblk` `man mkfs`
+
 ## Mount & Umount
 
 ```
