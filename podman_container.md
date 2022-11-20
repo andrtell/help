@@ -1,7 +1,21 @@
-# Podman Run
+# Podman Container
+
+## List containers
+```
+$ podman ps --all
+```
+
+## Stop container
+```
+$ podman stop <container>
+```
+
+## Remove a container
+```
+$ podman rm <container>
+```
 
 ## Run container
-
 ```
 $ podman run registry.access.redhat.com/ubi8 bash -c "sleep 10"
 ```
@@ -40,21 +54,4 @@ $ podman run --rm -it --name orange registry.access.redhat.com/ubi8 bash -c "sle
       # <c-p><c-q>
       
 $ podman exec -it orange bash
-```
-
-## List containers
-
-```
-$ podman ps --all
-```
-
-## Stop container
-
-```
-$ podman stop <container>
-```
-
-## Remove a container
-```
-$ podman rm <container>
 ```
