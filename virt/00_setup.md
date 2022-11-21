@@ -34,6 +34,24 @@ At this point your interfaces should have no ip (check with `ip a`)
 # dhcpcd br0
 ```
 
+## Virtual machines
+
+Create a new VM using the bridge to setup the VM network.
+
+```
+virt-install \
+  --name ubuntu01 \
+  --memory 2048 \
+  --vcpus 2 \
+  # --network network=default \
+  --bridge br0
+  --osinfo detect=on \
+  --disk path=/some/path/ubuntu01.qcow2,size=8 \
+  --cdrom /some/path/ubuntu-22.04.01-live-server-amd64.iso
+```
+
+Your VM should be visible on the network after creation with its own IP assigned by the local network DHCP server.
+
 ## Containers
 
 We make a container visible on the network using a macvlan network (for fun and profit).
@@ -121,20 +139,4 @@ Inspect the network
 # podman run -it --rm --replace --name ubuntu --network br0_net ubuntu
 ```
 
-## Virtual machines
 
-Create a new VM using the bridge to setup the VM network.
-
-```
-virt-install \
-  --name ubuntu01 \
-  --memory 2048 \
-  --vcpus 2 \
-  # --network network=default \
-  --bridge br0
-  --osinfo detect=on \
-  --disk path=/some/path/ubuntu01.qcow2,size=8 \
-  --cdrom /some/path/ubuntu-22.04.01-live-server-amd64.iso
-```
-
-Your VM should be visible on the network after creation with its own IP assigned by the local network DHCP server.
