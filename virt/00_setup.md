@@ -48,8 +48,8 @@ Note that this method is only available if running container as root.
   -o parent=br0 br0_net
 ```
 
-Note that the network DHCP server will not be used. IP will appear to be static (with risk of collision). To solve this
-add ip-range (with some range that is excluded by the DHCP server, or not used curently).
+One would expect that the local network DHCP server would be used, this is not the case. The container runtime (docker) will use it own DHCP server. From the local network point of view, an random static IP will be assign to the interface (with risk of collision). To solve this
+add an ip-range that is excluded by the local network DHCP server, or covering IPs not assigned to any host on the local network.
 
 ```
 # podman create network create \
@@ -57,7 +57,7 @@ add ip-range (with some range that is excluded by the DHCP server, or not used c
   --subnet=192.168.1.0/24 \
   --gateway=192.168.1.1 \
   -o parent=br0 br0_net \
-  --ip-range 192.168.1.254/32 # single ip network
+  --ip-range 192.168.1.254/32 # 1 ip range
   br0_net
 ```
 
