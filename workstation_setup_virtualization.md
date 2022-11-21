@@ -199,7 +199,11 @@ $ cat /usr/lib/systemd/system/io.podman.dhcp.service
     [Install]
     WantedBy=multi-user.target
     Also=io.podman.dhcp.socket
+```
 
+Then
+
+```
 $ sudo systemctl --now enable io.podman.dhcp.socket
 ```
 
