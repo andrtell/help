@@ -56,7 +56,7 @@ Your VM should be visible on the network after creation with its own IP assigned
 
 We make a container visible on the network using a macvlan network (for fun and profit).
 
-Note that this method is only available if running container as root.
+_Note that this method is only available if running container as root i.e rootfull continers._
 
 ```
 # podman create network create \
