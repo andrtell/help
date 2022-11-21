@@ -61,7 +61,61 @@ add an ip-range that is excluded by the local network DHCP server, or covering I
   br0_net
 ```
 
-Start a container using the network
+Inspect the new network
+
+```
+# podman network inspect br0_net
+
+[
+     {
+          "name": "br0_net",
+          "driver": "macvlan",
+          "network_interface": "br0",
+          "subnets": [
+               {
+                    "subnet": "192.168.1.0/24",
+                    "gateway": "192.168.1.1"
+               }
+          ],
+          "ipam_options": {
+               "driver": "host-local"
+          }
+     }
+]
+```
+
+It is possible to get around this by starting the cni dhcp daemon
+
+https://xaviercovis.github.io/IP-from-DHCP-podman/
+
+```
+# /usr/libexec/cni/dhcp daemon
+```
+
+And then creating a new network
+
+```
+# podman network create -d macvlan -o parent=br0 br0_net
+```
+
+Inspect the network
+
+```
+# podman network inspect br0_net
+
+[
+     {
+          "name": "br0_net_2",
+          "driver": "macvlan",
+          "network_interface": "br0",
+          "ipam_options": {
+               "driver": "dhcp"
+          }
+     }
+]
+```
+
+### Start a container using the network
 
 ```
 # podman run -it --rm --replace --name ubuntu --network br0_net ubuntu
