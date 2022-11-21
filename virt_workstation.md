@@ -93,7 +93,7 @@ $ virt-install \
 
 The VM should be visible on the network with its own MAC-address and IP assigned by the local network DHCP server.
 
-## Containers
+## Container network setup
 
 We make a container visible on the network using a macvlan network.
 
@@ -230,7 +230,7 @@ Inspect the network
 ]
 ```
 
-### Start a container
+## Start a container
 
 Use the created network when starting your container:
 
