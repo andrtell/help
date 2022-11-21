@@ -83,4 +83,4 @@ virt-install \
   --cdrom /some/path/ubuntu-22.04.01-live-server-amd64.iso
 ```
 
-Your VM should be visible on the network after creation.
+Your VM should be visible on the network after creation with its own IP assigned by the local network DHCP server.
