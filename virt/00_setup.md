@@ -1,4 +1,4 @@
-# Linux host as hypervisor running virtual machines and containers
+# Linux host as hypervisor running virtual machines and containers on local network. 
 
 ## Network configuration
 
